@@ -80,10 +80,21 @@ class ViewController: UIViewController {
 
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
+    
+    heading.center.x  -= view.bounds.width
+    username.center.x -= view.bounds.width
+    password.center.x -= view.bounds.width
   }
 
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
+    
+    UIView.animate(withDuration: 0.5, delay: 0.3, options: [],
+                   animations: {
+                    self.heading.center.x += self.view.bounds.width
+                    self.username.center.x += self.view.bounds.width
+                    self.password.center.x += self.view.bounds.width
+    }, completion: nil)
   }
 
   // MARK: further methods
